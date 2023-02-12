@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="140.4745mm"
+   height="21.361837mm"
+   viewBox="0 0 140.4745 21.361837"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="269.17563"
+       y="131.05048"
+       width="480.99542"
+       height="140.56757"
+       id="rect5244" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-35.154263,-31.945375)">
+    <g
+       id="g5614">
+      <circle
+         style="fill:#000080;stroke:#6f4600;stroke-width:0.606386;stroke-dasharray:none;stroke-opacity:1"
+         id="path383"
+         cy="42.626293"
+         cx="45.835178"
+         r="10.377726" />
+      <path
+         style="fill:#009e12;fill-opacity:1;stroke:#614d06;stroke-width:0.303193;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         d="m 42.174184,37.541956 c -0.686445,4.986901 8.436296,2.924294 7.880414,-0.812156 -0.849029,-5.70688 -8.564828,-3.432788 -10.321857,0.32807 -1.210056,2.590078 1.922962,2.455291 2.441443,0.484086 z"
+         id="path5080" />
+      <path
+         style="fill:#009e12;fill-opacity:1;stroke:#614d06;stroke-width:0.303193;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         d="m 53.564931,47.662766 c 0.614898,-1.214261 0.06527,-2.615076 0.767599,-3.926029 0.422348,-0.788346 0.492992,-1.709292 0.304215,-2.583612 -0.239338,-1.108389 -1.760091,-3.518905 -3.027403,-3.71373 -0.247506,-0.03805 -0.89382,0.616628 -0.994385,0.776788 -0.875008,1.393529 -0.182292,2.411824 0.332875,3.775264 0.05317,0.140736 0.334299,0.499002 0.309105,0.692809 -0.180702,1.389904 -1.940755,1.155836 -2.888749,1.360536 -0.357835,0.07727 -0.675521,0.609883 -0.79712,0.916487 -0.600134,1.513177 1.2469,6.176335 2.911482,5.033562 0.756034,-0.492557 1.966215,-1.077701 3.082381,-2.332075 z"
+         id="path5090" />
+      <path
+         style="fill:#009e12;fill-opacity:1;stroke:#614d06;stroke-width:0.303193;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+         d="m 43.001469,44.944101 c 1.183787,0.343366 1.979472,0.593956 2.945314,1.554514 0.874742,0.869953 0.630608,2.644055 -0.294239,3.40942 -0.374731,0.310118 -0.93177,0.484063 -1.38721,0.614631 -1.07438,0.308013 -2.596228,0.482304 -3.480642,-0.412207 -0.525242,-0.531241 -0.770824,-1.01727 -1.235109,-1.594568 -0.533005,-0.662739 -1.088918,-1.263209 -1.332867,-2.105139 -0.446828,-1.542122 -0.285941,-4.243117 0.963061,-5.46006 0.523248,-0.50981 3.370988,0.33109 3.495009,1.010266 0.168514,0.922789 -0.941026,1.395033 -0.921027,2.227671 0.03505,1.45907 0.530934,0.885444 1.24771,0.755472 z"
+         id="path5092" />
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-11.345117,-1.2601054)"
+       id="text5242"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:74.6667px;font-family:'Segoe Print';-inkscape-font-specification:'Segoe Print, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect5244);fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.88976;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"><tspan
+         x="269.17578"
+         y="195.01829"
+         id="tspan5815">Hello World</tspan></text>
+  </g>
+</svg>
