@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const icons = require("../../assets/icons");
+import icons from "../../assets/icons";
 
 const Navbar = (props) => {
   const seed = Math.floor(Math.random() * 1000);
+  console.log(icons);
 
   return (
     <div className="fixed top-0 left-0 w-screen h-16 flex items-center justify-between bg-white border-b-gray-300 border-b-[1px] px-4">
