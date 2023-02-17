@@ -48,16 +48,20 @@ const SearchBar = (props) => {
   return (
     <div className="flex items-center h-10">
       <div className="flex flex-row-reverse items-center h-10 border-[1px] border-gray-300 rounded-l-3xl overflow-hidden focus-within:border-blue-500">
-        {search ? (
-          <Button icon={icons.cross} handleClick={handleCrossButton} />
-        ) : null}
-        <input
-          type="text"
-          placeholder="Search"
-          className="text-lg peer pl-4 outline-none w-max"
-          value={search}
-          onChange={handleChange}
-        ></input>
+        <div className="flex w-96">
+          <input
+            type="text"
+            placeholder="Search"
+            className="flex-auto text-lg peer pl-4 outline-none w-max"
+            value={search}
+            onChange={handleChange}
+          ></input>
+          {search ? (
+            <div className="flex-none">
+              <Button icon={icons.cross} handleClick={handleCrossButton} />
+            </div>
+          ) : null}
+        </div>
         <div className="w-6 h-6 ml-4 hidden peer-focus:block">
           {icons.magnifyingGlass}
         </div>
