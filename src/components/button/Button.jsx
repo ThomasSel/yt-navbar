@@ -4,9 +4,11 @@ const Button = (props) => {
       <button className="button peer" onClick={props.handleClick}>
         <div className="w-6 h-6">{props.icon}</div>
       </button>
-      <div className="button-tooltip invisible peer-hover:visible">
-        {props.tooltip}
-      </div>
+      {props.tooltip ? (
+        <div className="button-tooltip invisible peer-hover:visible">
+          {props.tooltip}
+        </div>
+      ) : null}
     </div>
   );
 };
