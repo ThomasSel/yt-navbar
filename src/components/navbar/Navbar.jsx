@@ -14,7 +14,7 @@ const Navbar = (props) => {
         </a>
       </div>
 
-      <div className="flex">
+      <div className="flex justify-end w-1/4">
         <SearchBar />
         <Button icon={icons.microphone} tooltip="Search with your voice" />
       </div>
