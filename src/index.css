@@ -8,6 +8,6 @@
   }
 
   .button-tooltip {
-    @apply absolute p-2 pb-2.5 top-16 text-xs bg-zinc-800 bg-opacity-50 text-white rounded-md
+    @apply absolute p-2 pb-2.5 top-16 text-xs whitespace-nowrap bg-zinc-800 bg-opacity-50 text-white rounded-md
   }
 }
