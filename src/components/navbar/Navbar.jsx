@@ -66,12 +66,17 @@ const SearchBar = (props) => {
           {icons.magnifyingGlass}
         </div>
       </div>
-      <button
-        className="flex items-center justify-center h-full w-16 rounded-none rounded-r-3xl border-[1px] border-gray-300 border-l-0 bg-gray-50 hover:bg-gray-100
-            hover:border-gray-300"
-      >
-        <div className="w-6 h-6">{icons.magnifyingGlass}</div>
-      </button>
+      <div className="flex justify-center relative h-full w-16">
+        <button
+          className="flex items-center justify-center h-full w-16 rounded-none rounded-r-3xl border-[1px] border-gray-300 border-l-0 bg-gray-50 hover:bg-gray-100
+              hover:border-gray-300 peer"
+        >
+          <div className="w-6 h-6">{icons.magnifyingGlass}</div>
+        </button>
+        <div className="button-tooltip invisible peer-hover:visible mr-1">
+          Search
+        </div>
+      </div>
     </div>
   );
 };
