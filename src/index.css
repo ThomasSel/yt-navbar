@@ -4,6 +4,10 @@
 
 @layer components {
   .button {
-    @apply w-10 h-10 p-0 flex items-center justify-center rounded-3xl bg-white hover:bg-gray-200 hover:cursor-pointer transition-none hover:border-0 mx-1 first:ml-0 last:mr-0;
+    @apply w-10 h-10 p-0 flex items-center justify-center rounded-3xl bg-white hover:bg-gray-200;
+  }
+
+  .button-tooltip {
+    @apply absolute p-2 pb-2.5 top-16 text-xs bg-zinc-800 bg-opacity-50 text-white rounded-md
   }
 }

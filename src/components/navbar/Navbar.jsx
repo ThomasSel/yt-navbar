@@ -18,12 +18,12 @@ const Navbar = (props) => {
 
       <div className="flex">
         <SearchBar />
-        <Button icon={icons.microphone} />
+        <Button icon={icons.microphone} tooltip="Search with your voice" />
       </div>
 
       <div className="flex items-center">
-        <Button icon={icons.newVideo} />
-        <Button icon={icons.notification} />
+        <Button icon={icons.newVideo} tooltip="Create" />
+        <Button icon={icons.notification} tooltip="Notifications" />
         <img
           src={`https://api.dicebear.com/5.x/open-peeps/svg?seed=${seed}`}
           className="w-8 h-8 rounded-3xl ml-1 hover:cursor-pointer"
