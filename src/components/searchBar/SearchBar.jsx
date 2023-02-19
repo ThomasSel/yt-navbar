@@ -5,7 +5,7 @@ import Button from "../button/Button";
 
 const SearchBar = (props) => {
   const [search, setSearch] = useState("");
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(new Set());
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -18,7 +18,7 @@ const SearchBar = (props) => {
 
   const handleSearchButton = (event) => {
     event.preventDefault();
-    setHistory([search, ...history]);
+    setHistory(new Set(history).add(search));
   };
 
   const handleHistoryClick = (text) => {
@@ -51,7 +51,7 @@ const SearchBar = (props) => {
       </div>
 
       <ul className="absolute left-0 top-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible peer-focus-within:visible">
-        {history.map((search) => (
+        {[...history].reverse().map((search) => (
           <li className="hover:bg-gray-200 py-1">
             <button
               className="flex items-center"
