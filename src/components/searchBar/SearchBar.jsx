@@ -17,6 +17,7 @@ const SearchBar = (props) => {
   };
 
   const handleSearchButton = (event) => {
+    if (search.trim().length === 0) return;
     event.preventDefault();
     setHistory(new Set(history).add(search));
   };
