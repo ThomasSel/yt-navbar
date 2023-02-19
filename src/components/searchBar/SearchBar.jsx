@@ -30,42 +30,44 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="flex items-center h-10 relative">
-      <div className="flex flex-row-reverse items-center h-10 border-[1px] border-gray-300 rounded-l-3xl overflow-hidden focus-within:border-blue-500 peer">
-        <div className="flex w-96 peer">
-          <input
-            type="text"
-            placeholder="Search"
-            className="flex-auto text-lg pl-4 outline-none w-max"
-            value={search}
-            onChange={handleChange}
-          ></input>
-          {search ? (
-            <div className="flex-none">
-              <Button icon={icons.cross} handleClick={handleCrossButton} />
-            </div>
-          ) : null}
-        </div>
-        <div className="w-6 h-6 ml-4 hidden peer-focus-within:block">
-          {icons.magnifyingGlass}
-        </div>
-      </div>
-
-      <ul className="absolute left-0 top-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible peer-focus-within:visible">
-        {[...history].reverse().map((search) => (
-          <li className="hover:bg-gray-200 py-1">
-            <button
-              className="flex items-center"
-              onClick={handleHistoryClick(search)}
-            >
-              <div className="w-6 h-6 ml-4">{icons.history}</div>
-              <div className="w-96 pl-4 text-lg font-semibold text-start">
-                {search}
+    <div className="flex items-center h-10">
+      <div className="relative">
+        <div className="flex flex-row-reverse items-center h-10 border-[1px] border-gray-300 rounded-l-3xl overflow-hidden focus-within:border-blue-500 peer">
+          <div className="flex w-96 peer">
+            <input
+              type="text"
+              placeholder="Search"
+              className="flex-auto text-lg pl-4 outline-none w-max"
+              value={search}
+              onChange={handleChange}
+            ></input>
+            {search ? (
+              <div className="flex-none">
+                <Button icon={icons.cross} handleClick={handleCrossButton} />
               </div>
-            </button>
-          </li>
-        ))}
-      </ul>
+            ) : null}
+          </div>
+          <div className="w-6 h-6 ml-4 hidden peer-focus-within:block">
+            {icons.magnifyingGlass}
+          </div>
+        </div>
+
+        <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible peer-focus-within:visible">
+          {[...history].reverse().map((search) => (
+            <li className="hover:bg-gray-200 py-1">
+              <button
+                className="flex items-center w-full"
+                onClick={handleHistoryClick(search)}
+              >
+                <div className="flex w-6 h-6 ml-4">{icons.history}</div>
+                <div className="w-full pl-4 text-lg font-semibold text-start">
+                  {search}
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="flex justify-center relative h-full w-16">
         <button
