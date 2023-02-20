@@ -49,6 +49,38 @@ const SearchBar = (props) => {
     }
   };
 
+  const printHistory = () => {
+    const matchingHistory = [...history]
+      .reverse()
+      .filter((prevSearch) => prevSearch.startsWith(search));
+
+    if (matchingHistory.length !== 0) {
+      return (
+        <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
+          {matchingHistory.map((prevSearch) => (
+            <li
+              key={prevSearch}
+              className="flex items-center hover:bg-gray-200 py-1"
+            >
+              <button
+                className="flex items-center w-full"
+                onClick={handleHistoryClick(prevSearch)}
+              >
+                <div className="flex w-6 h-6 ml-4">{icons.history}</div>
+                <div className="w-full pl-4 text-lg font-semibold text-start">
+                  {prevSearch}
+                </div>
+              </button>
+              <button onClick={handleHistoryDelete(prevSearch)}>
+                <div className="flex w-6 h-6 ml-2 mr-[9px]">{icons.delete}</div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  };
+
   return (
     <div className="flex items-center h-10 group">
       <div className="relative">
@@ -74,31 +106,7 @@ const SearchBar = (props) => {
           </div>
         </div>
 
-        {history.size > 0 && (
-          <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
-            {[...history].reverse().map((search) => (
-              <li
-                key={search}
-                className="flex items-center hover:bg-gray-200 py-1"
-              >
-                <button
-                  className="flex items-center w-full"
-                  onClick={handleHistoryClick(search)}
-                >
-                  <div className="flex w-6 h-6 ml-4">{icons.history}</div>
-                  <div className="w-full pl-4 text-lg font-semibold text-start">
-                    {search}
-                  </div>
-                </button>
-                <button onClick={handleHistoryDelete(search)}>
-                  <div className="flex w-6 h-6 ml-2 mr-[9px]">
-                    {icons.delete}
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+        {printHistory()}
       </div>
 
       <div className="flex justify-center relative h-full w-16">
