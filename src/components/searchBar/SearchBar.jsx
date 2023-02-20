@@ -60,19 +60,22 @@ const SearchBar = (props) => {
           {matchingHistory.map((prevSearch) => (
             <li
               key={prevSearch}
-              className="flex items-center hover:bg-gray-200 py-1"
+              className="flex items-center hover:bg-gray-200 py-1 pr-[1px]"
             >
               <button
-                className="flex items-center w-full"
+                className="flex flex-auto items-center w-full"
                 onClick={handleHistoryClick(prevSearch)}
               >
                 <div className="flex w-6 h-6 ml-4">{icons.history}</div>
-                <div className="w-full pl-4 text-lg font-semibold text-start">
+                <div className="w-full pl-4 text-md font-semibold text-start">
                   {prevSearch}
                 </div>
               </button>
-              <button onClick={handleHistoryDelete(prevSearch)}>
-                <div className="flex w-6 h-6 ml-2 mr-[9px]">{icons.delete}</div>
+              <button
+                className="flex justify-center items-center flex-none h-6 w-10"
+                onClick={handleHistoryDelete(prevSearch)}
+              >
+                <div className="w-5 h-5">{icons.delete}</div>
               </button>
             </li>
           ))}
