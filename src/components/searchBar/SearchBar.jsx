@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import icons from "../../assets/icons";
 import Button from "../button/Button";
@@ -6,17 +6,20 @@ import Button from "../button/Button";
 const SearchBar = (props) => {
   const [search, setSearch] = useState("");
   const [history, setHistory] = useState(new Set());
+  const inputRef = useRef(null);
 
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
 
   const handleCrossButton = (event) => {
+    inputRef.current.focus();
     event.preventDefault();
     setSearch("");
   };
 
   const handleSearchButton = (event) => {
+    inputRef.current.focus();
     if (search.trim().length === 0) return;
     event.preventDefault();
     setHistory(new Set(history).add(search));
@@ -24,6 +27,7 @@ const SearchBar = (props) => {
 
   const handleHistoryClick = (text) => {
     return (event) => {
+      inputRef.current.focus();
       event.preventDefault();
       setSearch(text);
     };
@@ -31,6 +35,7 @@ const SearchBar = (props) => {
 
   const handleHistoryDelete = (text) => {
     return (event) => {
+      inputRef.current.focus();
       event.preventDefault();
       const newHistory = new Set(history);
       newHistory.delete(text);
@@ -39,9 +44,9 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="flex items-center h-10">
+    <div className="flex items-center h-10 group">
       <div className="relative">
-        <div className="flex flex-row-reverse items-center h-10 border-[1px] border-gray-300 rounded-l-3xl overflow-hidden focus-within:border-blue-500 peer">
+        <div className="flex flex-row-reverse items-center h-10 border-[1px] border-gray-300 rounded-l-3xl overflow-hidden group-focus-within:border-blue-500">
           <div className="flex w-96 peer">
             <input
               type="text"
@@ -49,6 +54,7 @@ const SearchBar = (props) => {
               className="flex-auto text-lg pl-4 outline-none w-max"
               value={search}
               onChange={handleChange}
+              ref={inputRef}
             ></input>
             {search ? (
               <div className="flex-none">
@@ -56,13 +62,13 @@ const SearchBar = (props) => {
               </div>
             ) : null}
           </div>
-          <div className="w-6 h-6 ml-4 hidden peer-focus-within:block">
+          <div className="w-6 h-6 ml-4 hidden group-focus-within:block">
             {icons.magnifyingGlass}
           </div>
         </div>
 
         {history.size > 0 && (
-          <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible peer-focus-within:visible">
+          <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
             {[...history].reverse().map((search) => (
               <li className="flex items-center hover:bg-gray-200 py-1">
                 <button
