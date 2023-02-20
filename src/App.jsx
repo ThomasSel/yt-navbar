@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
+    <div>
       <Navbar />
       {/* <div className="bg-yellow-500 w-screen h-40"></div> */}
     </div>
