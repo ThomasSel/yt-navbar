@@ -70,7 +70,10 @@ const SearchBar = (props) => {
         {history.size > 0 && (
           <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
             {[...history].reverse().map((search) => (
-              <li className="flex items-center hover:bg-gray-200 py-1">
+              <li
+                key={search}
+                className="flex items-center hover:bg-gray-200 py-1"
+              >
                 <button
                   className="flex items-center w-full"
                   onClick={handleHistoryClick(search)}
