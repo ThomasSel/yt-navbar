@@ -29,6 +29,15 @@ const SearchBar = (props) => {
     };
   };
 
+  const handleHistoryDelete = (text) => {
+    return (event) => {
+      event.preventDefault();
+      const newHistory = new Set(history);
+      newHistory.delete(text);
+      setHistory(newHistory);
+    };
+  };
+
   return (
     <div className="flex items-center h-10">
       <div className="relative">
@@ -54,7 +63,7 @@ const SearchBar = (props) => {
 
         <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible peer-focus-within:visible">
           {[...history].reverse().map((search) => (
-            <li className="hover:bg-gray-200 py-1">
+            <li className="flex items-center hover:bg-gray-200 py-1">
               <button
                 className="flex items-center w-full"
                 onClick={handleHistoryClick(search)}
@@ -63,6 +72,9 @@ const SearchBar = (props) => {
                 <div className="w-full pl-4 text-lg font-semibold text-start">
                   {search}
                 </div>
+              </button>
+              <button onClick={handleHistoryDelete(search)}>
+                <div className="flex w-6 h-6 ml-2 mr-[9px]">{icons.delete}</div>
               </button>
             </li>
           ))}
