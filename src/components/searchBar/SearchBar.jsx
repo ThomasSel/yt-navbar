@@ -43,6 +43,12 @@ const SearchBar = (props) => {
     };
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearchButton(event);
+    }
+  };
+
   return (
     <div className="flex items-center h-10 group">
       <div className="relative">
@@ -54,6 +60,7 @@ const SearchBar = (props) => {
               className="flex-auto text-lg pl-4 outline-none w-max"
               value={search}
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
               ref={inputRef}
             ></input>
             {search ? (
