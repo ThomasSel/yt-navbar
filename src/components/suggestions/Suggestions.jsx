@@ -3,7 +3,8 @@ import icons from "../../assets/icons";
 const Suggestions = (props) => {
   const matchingHistory = [...props.history]
     .reverse()
-    .filter((prevSearch) => prevSearch.startsWith(props.search));
+    .filter((prevSearch) => prevSearch.startsWith(props.search))
+    .slice(0, props.search === "" ? 10 : 4);
 
   const handleHistoryClick = (text) => {
     return (event) => {
@@ -28,7 +29,7 @@ const Suggestions = (props) => {
   if (render) {
     return (
       <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
-        {matchingHistory.slice(0, 10).map((prevSearch) => (
+        {matchingHistory.map((prevSearch) => (
           <li
             key={prevSearch}
             className="flex items-center hover:bg-gray-200 py-1 pr-[1px]"
