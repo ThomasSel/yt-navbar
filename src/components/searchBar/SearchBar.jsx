@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import icons from "../../assets/icons";
 import Button from "../button/Button";
@@ -8,26 +8,28 @@ const SearchBar = (props) => {
   const [history, setHistory] = useState(new Set());
   const inputRef = useRef(null);
 
+  useEffect(() => inputRef.current.focus(), [history, search]);
+
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
 
   const handleCrossButton = (event) => {
-    inputRef.current.focus();
     event.preventDefault();
     setSearch("");
   };
 
   const handleSearchButton = (event) => {
-    inputRef.current.focus();
-    if (search.trim().length === 0) return;
+    if (search.trim().length === 0) {
+      inputRef.current.focus();
+      return;
+    }
     event.preventDefault();
     setHistory(new Set(history).add(search));
   };
 
   const handleHistoryClick = (text) => {
     return (event) => {
-      inputRef.current.focus();
       event.preventDefault();
       setSearch(text);
     };
@@ -35,7 +37,6 @@ const SearchBar = (props) => {
 
   const handleHistoryDelete = (text) => {
     return (event) => {
-      inputRef.current.focus();
       event.preventDefault();
       const newHistory = new Set(history);
       newHistory.delete(text);
