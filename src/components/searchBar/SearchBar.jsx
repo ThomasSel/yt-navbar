@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 import icons from "../../assets/icons";
 import Button from "../button/Button";
+import Suggestions from "../suggestions/Suggestions";
 
 const SearchBar = (props) => {
   const [search, setSearch] = useState("");
@@ -12,6 +13,12 @@ const SearchBar = (props) => {
 
   const handleChange = (event) => {
     setSearch(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearchButton(event);
+    }
   };
 
   const handleCrossButton = (event) => {
@@ -26,63 +33,6 @@ const SearchBar = (props) => {
     }
     event.preventDefault();
     setHistory(new Set(history).add(search));
-  };
-
-  const handleHistoryClick = (text) => {
-    return (event) => {
-      event.preventDefault();
-      setSearch(text);
-    };
-  };
-
-  const handleHistoryDelete = (text) => {
-    return (event) => {
-      event.preventDefault();
-      const newHistory = new Set(history);
-      newHistory.delete(text);
-      setHistory(newHistory);
-    };
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleSearchButton(event);
-    }
-  };
-
-  const printHistory = () => {
-    const matchingHistory = [...history]
-      .reverse()
-      .filter((prevSearch) => prevSearch.startsWith(search));
-
-    if (matchingHistory.length !== 0) {
-      return (
-        <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
-          {matchingHistory.map((prevSearch) => (
-            <li
-              key={prevSearch}
-              className="flex items-center hover:bg-gray-200 py-1 pr-[1px]"
-            >
-              <button
-                className="flex flex-auto items-center w-full"
-                onClick={handleHistoryClick(prevSearch)}
-              >
-                <div className="flex w-6 h-6 ml-4">{icons.history}</div>
-                <div className="w-full pl-4 text-md font-semibold text-start">
-                  {prevSearch}
-                </div>
-              </button>
-              <button
-                className="flex justify-center items-center flex-none h-6 w-10"
-                onClick={handleHistoryDelete(prevSearch)}
-              >
-                <div className="w-5 h-5">{icons.delete}</div>
-              </button>
-            </li>
-          ))}
-        </ul>
-      );
-    }
   };
 
   return (
@@ -110,7 +60,12 @@ const SearchBar = (props) => {
           </div>
         </div>
 
-        {printHistory()}
+        <Suggestions
+          search={search}
+          setSearch={setSearch}
+          history={history}
+          setHistory={setHistory}
+        />
       </div>
 
       <div className="flex justify-center relative h-full w-16">
