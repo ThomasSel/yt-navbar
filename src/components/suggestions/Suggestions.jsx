@@ -28,7 +28,7 @@ const Suggestions = (props) => {
   if (render) {
     return (
       <ul className="absolute left-0 top-full w-full py-2 bg-white rounded-2xl overflow-hidden drop-shadow-md invisible group-focus-within:visible">
-        {matchingHistory.map((prevSearch) => (
+        {matchingHistory.slice(0, 10).map((prevSearch) => (
           <li
             key={prevSearch}
             className="flex items-center hover:bg-gray-200 py-1 pr-[1px]"
