@@ -1,4 +1,4 @@
-# Fake YouTube Banner <img src="./public/icon.svg" alt="logo" width="28px">
+# <img src="./public/icon.svg" alt="logo" width="28px"> Fake YouTube Banner
 
 A small clone of [Youtube](https://www.youtube.com/)'s navbar.
 
@@ -47,3 +47,22 @@ A combination of using the `hidden`, `visible` and `invisible` tailwind classes 
 Finally, use of `relative` and `absolute` positions allowed for layering pop-ups on top of the page.
 
 The project was built using [vite](https://vitejs.dev/).
+
+# Reflections
+
+I started this project because I was intrigued by the YouTube search bar, and wanted to put my styling skills to test.
+On the styling front I'm really pleased with the result and I did learn a lot, especially regarding dropdowns.
+However, I partially wish I gave this project a go with vanilla CSS to make sure I was fully understanding the styling concepts that underpinned what I was making, since Tailwind does abstract some of the complexity.
+
+Having initially started the project as a styling exercise, I didn't think there would be much need for testing my code.
+However, as the project went on I started adding some functionality (eg search bar suggestions replacing the input if you click on them).
+Testing this functionality would have helped catch bugs earlier, without manual testing and would help me be more confident in my code.
+
+# Things to Add
+
+- Make the styling work on different screen sizes
+- TESTING!!!
+- Add some placeholder content below the navbar
+- Make the buttons link to different pages / components / functionality
+- Add a small backend to store user search history and profile picture
+- Host the app
